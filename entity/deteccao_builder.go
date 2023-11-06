@@ -13,6 +13,11 @@ func (b DeteccaoBuilder) WithWkt(wkt string) DeteccaoBuilder {
 	return b
 }
 
+func (b DeteccaoBuilder) WithAlerta(alerta *Alerta) DeteccaoBuilder {
+	b.deteccao.Alerta = alerta
+	return b
+}
+
 func (b DeteccaoBuilder) WithClasse(classe *DeteccaoClasse) DeteccaoBuilder {
 	b.deteccao.Classe = classe
 	return b
