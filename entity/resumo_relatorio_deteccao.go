@@ -3,8 +3,8 @@ package entity
 type ResumoRelatorioDeteccao struct {
 	TotalAnalises        uint
 	TotalDeteccoes       uint
-	TotalTipoPorDeteccao map[DeteccaoClasse]uint
-	TotalAreaPorDeteccao map[DeteccaoClasse]float32
+	TotalDeteccaoPorTipo map[DeteccaoClasse]uint
+	TotalDeteccaoPorArea map[DeteccaoClasse]float32
 }
 
 func NewResumoRelatorioDeteccao(
@@ -16,7 +16,7 @@ func NewResumoRelatorioDeteccao(
 	return &ResumoRelatorioDeteccao{
 		TotalAnalises:        totalAnalises,
 		TotalDeteccoes:       totalDeteccoes,
-		TotalTipoPorDeteccao: totalTipoPorDeteccao,
-		TotalAreaPorDeteccao: totalAreaPorDeteccao,
+		TotalDeteccaoPorTipo: totalTipoPorDeteccao,
+		TotalDeteccaoPorArea: totalAreaPorDeteccao,
 	}
 }
