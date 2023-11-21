@@ -89,6 +89,22 @@ func (u *UsuarioSession) Claims() map[string]interface{} {
 	return claims
 }
 
+func (u *UsuarioSession) IsExpired() bool {
+	return time.Now().Unix() > int64(u.GetExpiredAt())
+}
+
+func (u *UsuarioSession) ExistDominios(dominios ...string) bool {
+	for _, d := range u.Dominios {
+		for _, dominio := range dominios {
+			if d.Dominio == dominio {
+				return true
+			}
+		}
+	}
+
+	return false
+}
+
 func (u *UsuarioSession) ExistDominio(dominio string) bool {
 	dominios := u.Dominios
 
