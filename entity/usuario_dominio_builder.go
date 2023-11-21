@@ -4,9 +4,9 @@ type UsuarioDominioBuilder struct {
 	usuarioDominio *UsuarioDominio
 }
 
-func NewUsuarioDominioBuilder() *UsuarioDominioBuilder {
+func NewUsuarioDominioBuilder(id uint) *UsuarioDominioBuilder {
 	return &UsuarioDominioBuilder{
-		usuarioDominio: &UsuarioDominio{},
+		usuarioDominio: NewUsuarioDominio(id),
 	}
 }
 
