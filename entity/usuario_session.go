@@ -28,7 +28,7 @@ func NewUsuarioSession(usuario *Usuario, dominios []*UsuarioDominio, manterConec
 	return u
 }
 
-func NewUsuarioDominioFromDecoder(decoder UsuarioSessionDecoder) *UsuarioSession {
+func NewUsuarioSessionFromDecoder(decoder UsuarioSessionDecoder) *UsuarioSession {
 	u := &UsuarioSession{}
 
 	userId, exist := decoder.GetClaimFloat64("user_id")
