@@ -8,6 +8,8 @@ type UsuarioDominio struct {
 	Checked bool
 }
 
+type UsuariosDominios []*UsuarioDominio
+
 func NewUsuarioDominio(id uint) *UsuarioDominio {
 	return &UsuarioDominio{
 		Id: id,
