@@ -5,6 +5,7 @@ type UsuarioDominio struct {
 	Dominio string
 	Role    string
 	Usuario *Usuario
+	Checked bool
 }
 
 func NewUsuarioDominio(id uint) *UsuarioDominio {

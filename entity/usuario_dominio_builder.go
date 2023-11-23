@@ -15,6 +15,11 @@ func (b *UsuarioDominioBuilder) WithDominio(dominio string) *UsuarioDominioBuild
 	return b
 }
 
+func (b *UsuarioDominioBuilder) WithChecked(checked bool) *UsuarioDominioBuilder {
+	b.usuarioDominio.Checked = checked
+	return b
+}
+
 func (b *UsuarioDominioBuilder) WithRole(role string) *UsuarioDominioBuilder {
 	b.usuarioDominio.Role = role
 	return b
