@@ -1,7 +1,6 @@
 package entity
 
 import (
-	"strings"
 	"time"
 )
 
@@ -14,15 +13,16 @@ type UsuarioSessionDecoder interface {
 type UsuarioSession struct {
 	CreateAt        int64
 	ExpiredAt       int64
+	Version         string
 	Usuario         *Usuario
-	Dominios        []*UsuarioDominio
 	ManterConectado bool
 }
 
-func NewUsuarioSession(usuario *Usuario, dominios []*UsuarioDominio, manterConectado bool) *UsuarioSession {
+func NewUsuarioSession(version string, usuario *Usuario, manterConectado bool) *UsuarioSession {
 	u := &UsuarioSession{
-		Usuario:  usuario,
-		Dominios: dominios,
+		Usuario:         usuario,
+		Version:         version,
+		ManterConectado: manterConectado,
 	}
 
 	return u
@@ -56,12 +56,9 @@ func NewUsuarioSessionFromDecoder(decoder UsuarioSessionDecoder) *UsuarioSession
 		u.ManterConectado = manterConectado
 	}
 
-	dominios, exist := decoder.GetClaimString("dominios")
+	version, exist := decoder.GetClaimString("version")
 	if exist {
-		_dominios := strings.Split(dominios, ",")
-		for _, dominio := range _dominios {
-			u.Dominios = append(u.Dominios, NewUsuarioDominioBuilder(0).WithDominio(dominio).Build())
-		}
+		u.Version = version
 	}
 
 	return u
@@ -79,42 +76,13 @@ func (u *UsuarioSession) Claims() map[string]interface{} {
 	claims["operador_id"] = u.Usuario.Id
 	claims["cliente_id"] = u.Usuario.Cliente.Id
 
-	_dominios := []string{}
-	for _, dominio := range u.Dominios {
-		_dominios = append(_dominios, dominio.Dominio)
-	}
-
-	claims["dominios"] = strings.Join(_dominios, ",")
+	claims["version"] = u.Version
 
 	return claims
 }
 
 func (u *UsuarioSession) IsExpired() bool {
 	return time.Now().Unix() > int64(u.GetExpiredAt())
-}
-
-func (u *UsuarioSession) ExistDominios(dominios ...string) bool {
-	for _, d := range u.Dominios {
-		for _, dominio := range dominios {
-			if d.Dominio == dominio {
-				return true
-			}
-		}
-	}
-
-	return false
-}
-
-func (u *UsuarioSession) ExistDominio(dominio string) bool {
-	dominios := u.Dominios
-
-	for _, d := range dominios {
-		if d.Dominio == dominio {
-			return true
-		}
-	}
-
-	return false
 }
 
 func (u *UsuarioSession) GetCreatedAt() int64 {
@@ -127,6 +95,26 @@ func (u *UsuarioSession) GetExpiredAt() int64 {
 
 func (u *UsuarioSession) GetUserId() uint {
 	return u.Usuario.Id
+}
+
+func (u *UsuarioSession) GetVersion() string {
+	return u.Version
+}
+
+func (u *UsuarioSession) GetClienteId() uint {
+	if u.Usuario == nil {
+		return 0
+	}
+
+	if u.Usuario.Cliente == nil {
+		return 0
+	}
+
+	return u.Usuario.Cliente.Id
+}
+
+func (u *UsuarioSession) IsManterConectado() bool {
+	return u.ManterConectado
 }
 
 func expireTime(manterConectado bool) int64 {
