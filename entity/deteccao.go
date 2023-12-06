@@ -9,6 +9,7 @@ type Deteccao struct {
 	ImagemResultadoUuid string
 	Classe              *DeteccaoClasse
 	Alerta              *Alerta
+	Cliente             *Cliente
 	Camadas             []*Camada
 }
 
