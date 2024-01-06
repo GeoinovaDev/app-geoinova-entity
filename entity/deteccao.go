@@ -7,6 +7,7 @@ type Deteccao struct {
 	ImagemAntesUuid     string
 	ImagemDepoisUuid    string
 	ImagemResultadoUuid string
+	AreaHa              float64
 	Classe              *DeteccaoClasse
 	Alerta              *Alerta
 	Cliente             *Cliente
