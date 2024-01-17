@@ -10,17 +10,17 @@ func NewAtivoBucketBuilder(id uint) *AtivoBucketBuilder {
 	}
 }
 
-func (b *AtivoBucketBuilder) Ativo(ativo *Ativo) *AtivoBucketBuilder {
+func (b *AtivoBucketBuilder) WithAtivo(ativo *Ativo) *AtivoBucketBuilder {
 	b.ativoBucket.Ativo = ativo
 	return b
 }
 
-func (b *AtivoBucketBuilder) Bucket(bucket string) *AtivoBucketBuilder {
+func (b *AtivoBucketBuilder) WithBucket(bucket string) *AtivoBucketBuilder {
 	b.ativoBucket.Bucket = bucket
 	return b
 }
 
-func (b *AtivoBucketBuilder) IsDefault(isDefault bool) *AtivoBucketBuilder {
+func (b *AtivoBucketBuilder) WithIsDefault(isDefault bool) *AtivoBucketBuilder {
 	b.ativoBucket.IsDefault = isDefault
 	return b
 }
