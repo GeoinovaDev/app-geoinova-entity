@@ -21,7 +21,7 @@ func (t FormularioPropriedadeTipo) Equals(tipo FormularioPropriedadeTipo) bool {
 type FormularioPropriedade struct {
 	Id        uint
 	Nome      string
-	Atributos []*CamadaAtributo
+	Atributos []string
 	Tipo      FormularioPropriedadeTipo
 }
 
@@ -29,6 +29,6 @@ func NewFormularioPropriedade(id uint) *FormularioPropriedade {
 	return &FormularioPropriedade{
 		Id:        id,
 		Tipo:      FORMULARIO_PROPRIEDADE_TEXT,
-		Atributos: []*CamadaAtributo{},
+		Atributos: []string{},
 	}
 }
