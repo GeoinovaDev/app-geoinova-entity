@@ -1,15 +1,15 @@
 package entity
 
 type CamadaAtributo struct {
-	Id       uint
-	Atributo string
-	Valor    string
+	Id    uint
+	Nome  string
+	Valor string
 }
 
-func NewCamadaAtributo(id uint, atributo string, valor string) *CamadaAtributo {
+func NewCamadaAtributo(id uint, nome string, valor string) *CamadaAtributo {
 	return &CamadaAtributo{
-		Id:       id,
-		Atributo: atributo,
-		Valor:    valor,
+		Id:    id,
+		Nome:  nome,
+		Valor: valor,
 	}
 }
