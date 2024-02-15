@@ -8,10 +8,12 @@ type Camada struct {
 	Area      float32
 	Ativo     *Ativo
 	Categoria *CamadaCategoria
+	Atributos []*CamadaAtributo
 }
 
 func NewCamada(id uint) *Camada {
 	return &Camada{
-		Id: id,
+		Id:        id,
+		Atributos: make([]*CamadaAtributo, 0),
 	}
 }

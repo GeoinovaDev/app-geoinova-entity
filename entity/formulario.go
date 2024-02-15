@@ -8,6 +8,7 @@ type Formulario struct {
 
 func NewFormulario(id uint) *Formulario {
 	return &Formulario{
-		Id: id,
+		Id:           id,
+		Propriedades: make([]*FormularioPropriedade, 0),
 	}
 }

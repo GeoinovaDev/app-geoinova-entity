@@ -38,6 +38,16 @@ func (b CamadaBuilder) WithCategoria(categoria *CamadaCategoria) CamadaBuilder {
 	return b
 }
 
+func (b CamadaBuilder) WithAtributos(atributos []*CamadaAtributo) CamadaBuilder {
+	b.camada.Atributos = atributos
+	return b
+}
+
+func (b CamadaBuilder) AddAtributo(atributo ...*CamadaAtributo) CamadaBuilder {
+	b.camada.Atributos = append(b.camada.Atributos, atributo...)
+	return b
+}
+
 func (b CamadaBuilder) Build() *Camada {
 	return b.camada
 }
