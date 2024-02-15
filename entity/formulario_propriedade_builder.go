@@ -20,8 +20,13 @@ func (b *FormularioPropriedadeBuilder) WithTipo(tipo FormularioPropriedadeTipo) 
 	return b
 }
 
-func (b *FormularioPropriedadeBuilder) WithField(field string) *FormularioPropriedadeBuilder {
-	b.formularioPropriedade.Field = field
+func (b *FormularioPropriedadeBuilder) WithAtributos(atributos []*CamadaAtributo) *FormularioPropriedadeBuilder {
+	b.formularioPropriedade.Atributos = atributos
+	return b
+}
+
+func (b *FormularioPropriedadeBuilder) AddAtributo(atributo ...*CamadaAtributo) *FormularioPropriedadeBuilder {
+	b.formularioPropriedade.Atributos = append(b.formularioPropriedade.Atributos, atributo...)
 	return b
 }
 

@@ -19,15 +19,16 @@ func (t FormularioPropriedadeTipo) Equals(tipo FormularioPropriedadeTipo) bool {
 }
 
 type FormularioPropriedade struct {
-	Id    uint
-	Nome  string
-	Field string
-	Tipo  FormularioPropriedadeTipo
+	Id        uint
+	Nome      string
+	Atributos []*CamadaAtributo
+	Tipo      FormularioPropriedadeTipo
 }
 
 func NewFormularioPropriedade(id uint) *FormularioPropriedade {
 	return &FormularioPropriedade{
-		Id:   id,
-		Tipo: FORMULARIO_PROPRIEDADE_TEXT,
+		Id:        id,
+		Tipo:      FORMULARIO_PROPRIEDADE_TEXT,
+		Atributos: []*CamadaAtributo{},
 	}
 }
