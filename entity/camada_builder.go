@@ -38,6 +38,11 @@ func (b CamadaBuilder) WithCategoria(categoria *CamadaCategoria) CamadaBuilder {
 	return b
 }
 
+func (b CamadaBuilder) WithFormulario(formulario *Formulario) CamadaBuilder {
+	b.camada.Formulario = formulario
+	return b
+}
+
 func (b CamadaBuilder) WithAtributos(atributos []*CamadaAtributo) CamadaBuilder {
 	b.camada.Atributos = atributos
 	return b
