@@ -43,13 +43,13 @@ func (b CamadaBuilder) WithFormulario(formulario *Formulario) CamadaBuilder {
 	return b
 }
 
-func (b CamadaBuilder) WithAtributos(atributos []*CamadaAtributo) CamadaBuilder {
+func (b CamadaBuilder) WithAtributos(atributos map[string]string) CamadaBuilder {
 	b.camada.Atributos = atributos
 	return b
 }
 
-func (b CamadaBuilder) AddAtributo(atributo ...*CamadaAtributo) CamadaBuilder {
-	b.camada.Atributos = append(b.camada.Atributos, atributo...)
+func (b CamadaBuilder) AddAtributo(nome string, valor string) CamadaBuilder {
+	b.camada.Atributos[nome] = valor
 	return b
 }
 

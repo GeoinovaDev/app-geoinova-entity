@@ -9,12 +9,12 @@ type Camada struct {
 	Ativo      *Ativo
 	Categoria  *CamadaCategoria
 	Formulario *Formulario
-	Atributos  []*CamadaAtributo
+	Atributos  map[string]string
 }
 
 func NewCamada(id uint) *Camada {
 	return &Camada{
 		Id:        id,
-		Atributos: make([]*CamadaAtributo, 0),
+		Atributos: make(map[string]string),
 	}
 }
