@@ -28,11 +28,6 @@ func (b CamadaBuilder) WithAtivo(ativo *Ativo) CamadaBuilder {
 	return b
 }
 
-func (b CamadaBuilder) WithArea(area float32) CamadaBuilder {
-	b.camada.Area = area
-	return b
-}
-
 func (b CamadaBuilder) WithCategoria(categoria *CamadaCategoria) CamadaBuilder {
 	b.camada.Categoria = categoria
 	return b

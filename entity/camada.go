@@ -5,7 +5,6 @@ type Camada struct {
 	Nome       string
 	Wkt        string
 	Detalhe    string
-	Area       float32
 	Ativo      *Ativo
 	Categoria  *CamadaCategoria
 	Formulario *Formulario
