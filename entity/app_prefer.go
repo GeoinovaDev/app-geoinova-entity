@@ -8,6 +8,7 @@ type AppPrefer struct {
 
 func NewAppPrefer(id uint) *AppPrefer {
 	return &AppPrefer{
-		Id: id,
+		Id:                   id,
+		ColunasTabelaCamadas: []string{},
 	}
 }
