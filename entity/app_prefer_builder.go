@@ -4,9 +4,9 @@ type AppPreferBuilder struct {
 	appPrefer *AppPrefer
 }
 
-func NewAppPreferBuilder(cliente *Cliente) *AppPreferBuilder {
+func NewAppPreferBuilder(id uint) *AppPreferBuilder {
 	return &AppPreferBuilder{
-		appPrefer: NewAppPrefer(cliente),
+		appPrefer: NewAppPrefer(id),
 	}
 }
 

@@ -1,12 +1,13 @@
 package entity
 
 type AppPrefer struct {
+	Id                   uint
 	ColunasTabelaCamadas []string
 	Cliente              *Cliente
 }
 
-func NewAppPrefer(cliente *Cliente) *AppPrefer {
+func NewAppPrefer(id uint) *AppPrefer {
 	return &AppPrefer{
-		Cliente: cliente,
+		Id: id,
 	}
 }
