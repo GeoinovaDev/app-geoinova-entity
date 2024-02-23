@@ -20,6 +20,11 @@ func (b *PermissaoGrupoPermissaoBuilder) WithPermissao(permissao *Permissao) *Pe
 	return b
 }
 
+func (b *PermissaoGrupoPermissaoBuilder) WithGrupoPermissao(grupoPermissao *GrupoPermissao) *PermissaoGrupoPermissaoBuilder {
+	b.permissaoGrupoPermissao.GrupoPermissao = grupoPermissao
+	return b
+}
+
 func (b *PermissaoGrupoPermissaoBuilder) Build() *PermissaoGrupoPermissao {
 	return b.permissaoGrupoPermissao
 }

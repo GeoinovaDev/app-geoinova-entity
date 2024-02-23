@@ -3,6 +3,7 @@ package entity
 type Permissao struct {
 	Id       uint
 	Nome     string
+	Action   string
 	Leitura  bool
 	Escrita  bool
 	Exclusao bool
