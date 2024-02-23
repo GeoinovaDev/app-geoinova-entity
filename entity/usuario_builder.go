@@ -13,6 +13,16 @@ func (b UsuarioBuilder) WithNome(nome string) UsuarioBuilder {
 	return b
 }
 
+func (b UsuarioBuilder) AddPermissao(permissao *Permissao) UsuarioBuilder {
+	b.usuario.Permissoes.Add(permissao)
+	return b
+}
+
+func (b UsuarioBuilder) WithGrupoPermissao(grupo *GrupoPermissao) UsuarioBuilder {
+	b.usuario.GrupoPermissao = grupo
+	return b
+}
+
 func (b UsuarioBuilder) WithEmail(email string) UsuarioBuilder {
 	b.usuario.Email = email
 	return b
