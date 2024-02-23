@@ -1,12 +1,13 @@
 package entity
 
 type Permissao struct {
-	Id       uint
-	Nome     string
-	Action   string
-	Leitura  bool
-	Escrita  bool
-	Exclusao bool
+	Id        uint
+	Nome      string
+	Action    string
+	Categoria *PermissaoCategoria
+	Leitura   bool
+	Escrita   bool
+	Exclusao  bool
 }
 
 type Permissoes []*Permissao

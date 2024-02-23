@@ -15,6 +15,11 @@ func (b *PermissaoBuilder) WithNome(nome string) *PermissaoBuilder {
 	return b
 }
 
+func (b *PermissaoBuilder) WithCategoria(categoria *PermissaoCategoria) *PermissaoBuilder {
+	b.permissao.Categoria = categoria
+	return b
+}
+
 func (b *PermissaoBuilder) WithAction(action string) *PermissaoBuilder {
 	b.permissao.Action = action
 	return b
