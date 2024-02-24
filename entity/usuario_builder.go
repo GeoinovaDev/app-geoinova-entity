@@ -13,8 +13,13 @@ func (b UsuarioBuilder) WithNome(nome string) UsuarioBuilder {
 	return b
 }
 
-func (b UsuarioBuilder) AddPermissao(permissao *Permissao) UsuarioBuilder {
-	b.usuario.Permissoes.Add(permissao)
+func (b UsuarioBuilder) AddPermissaoAcesso(ativo *Ativo) UsuarioBuilder {
+	b.usuario.PermissaoAcesso = append(b.usuario.PermissaoAcesso, ativo)
+	return b
+}
+
+func (b UsuarioBuilder) WithPermissaoAcesso(permissaoAcesso []*Ativo) UsuarioBuilder {
+	b.usuario.PermissaoAcesso = permissaoAcesso
 	return b
 }
 
