@@ -22,12 +22,12 @@ func (b *LicencaBuilder) WithDescricao(descricao string) *LicencaBuilder {
 	return b
 }
 
-func (b *LicencaBuilder) WithDataProtocolo(dataProtocolo time.Time) *LicencaBuilder {
+func (b *LicencaBuilder) WithDataProtocolo(dataProtocolo *time.Time) *LicencaBuilder {
 	b.licenca.DataProtocolo = dataProtocolo
 	return b
 }
 
-func (b *LicencaBuilder) WithDataVencimento(dataVencimento time.Time) *LicencaBuilder {
+func (b *LicencaBuilder) WithDataVencimento(dataVencimento *time.Time) *LicencaBuilder {
 	b.licenca.DataVencimento = dataVencimento
 	return b
 }

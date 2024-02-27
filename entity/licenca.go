@@ -6,8 +6,8 @@ type Licenca struct {
 	Id             uint
 	Nome           string
 	Descricao      string
-	DataProtocolo  time.Time
-	DataVencimento time.Time
+	DataProtocolo  *time.Time
+	DataVencimento *time.Time
 	Status         LicencaStatus
 	Tipo           *LicencaTipo
 	Camada         *Camada
