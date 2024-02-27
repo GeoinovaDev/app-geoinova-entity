@@ -3,10 +3,12 @@ package entity
 import "path/filepath"
 
 type Arquivo struct {
-	Nome string
-	Path string
-	Tipo string
-	Size uint
+	Nome   string
+	Path   string
+	Tipo   string
+	Size   uint
+	Source string
+	Bucket string
 }
 
 func NewArquivo(nome string, path string) *Arquivo {

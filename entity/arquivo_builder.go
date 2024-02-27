@@ -30,6 +30,16 @@ func (b *ArquivoBuilder) WithSize(size uint) *ArquivoBuilder {
 	return b
 }
 
+func (b *ArquivoBuilder) WithSource(source string) *ArquivoBuilder {
+	b.arquivo.Source = source
+	return b
+}
+
+func (b *ArquivoBuilder) WithBucket(bucket string) *ArquivoBuilder {
+	b.arquivo.Bucket = bucket
+	return b
+}
+
 func (b *ArquivoBuilder) Build() *Arquivo {
 	return b.arquivo
 }
