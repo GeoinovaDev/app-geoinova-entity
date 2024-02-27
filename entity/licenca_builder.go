@@ -47,6 +47,11 @@ func (b *LicencaBuilder) WithAtivo(ativo *Ativo) *LicencaBuilder {
 	return b
 }
 
+func (b *LicencaBuilder) WithStatus(status LicencaStatus) *LicencaBuilder {
+	b.licenca.Status = status
+	return b
+}
+
 func (b *LicencaBuilder) WithArquivo(arquivo *Arquivo) *LicencaBuilder {
 	b.licenca.Arquivo = arquivo
 	return b
