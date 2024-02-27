@@ -10,3 +10,7 @@ const (
 func (cs ClienteStatus) Equals(status ClienteStatus) bool {
 	return string(cs) == string(status)
 }
+
+func NewClienteStatus(status string) ClienteStatus {
+	return ClienteStatus(status)
+}

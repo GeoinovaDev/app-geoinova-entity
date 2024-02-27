@@ -8,6 +8,7 @@ type Licenca struct {
 	Descricao      string
 	DataProtocolo  time.Time
 	DataVencimento time.Time
+	Status         LicencaStatus
 	Tipo           *LicencaTipo
 	Camada         *Camada
 	Ativo          *Ativo
