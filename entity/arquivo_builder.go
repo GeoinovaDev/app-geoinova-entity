@@ -35,6 +35,11 @@ func (b *ArquivoBuilder) WithSource(source string) *ArquivoBuilder {
 	return b
 }
 
+func (b *ArquivoBuilder) WithUrl(url string) *ArquivoBuilder {
+	b.arquivo.Url = url
+	return b
+}
+
 func (b *ArquivoBuilder) WithBucket(bucket string) *ArquivoBuilder {
 	b.arquivo.Bucket = bucket
 	return b

@@ -9,6 +9,7 @@ type Arquivo struct {
 	Size   uint
 	Source string
 	Bucket string
+	Url    string
 }
 
 func NewArquivo(nome string, path string) *Arquivo {
