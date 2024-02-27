@@ -5,10 +5,15 @@ import "path/filepath"
 type Arquivo struct {
 	Nome string
 	Path string
+	Tipo string
+	Size uint
 }
 
 func NewArquivo(nome string, path string) *Arquivo {
-	return &Arquivo{nome, path}
+	return &Arquivo{
+		Nome: nome,
+		Path: path,
+	}
 }
 
 func NewArquivoFromFilename(filename string) *Arquivo {
