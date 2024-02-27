@@ -5,9 +5,11 @@ type Usuario struct {
 	Nome            string
 	Email           string
 	Senha           string
+	Descricao       string
 	Status          UsuarioStatus
 	Cliente         *Cliente
 	PermissaoAcesso []*Ativo
+	Papel           UsuarioPapel
 	GrupoPermissao  *GrupoPermissao
 }
 

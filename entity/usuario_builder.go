@@ -13,6 +13,16 @@ func (b UsuarioBuilder) WithNome(nome string) UsuarioBuilder {
 	return b
 }
 
+func (b UsuarioBuilder) WithPapel(papel UsuarioPapel) UsuarioBuilder {
+	b.usuario.Papel = papel
+	return b
+}
+
+func (b UsuarioBuilder) WithDescricao(descricao string) UsuarioBuilder {
+	b.usuario.Descricao = descricao
+	return b
+}
+
 func (b UsuarioBuilder) AddPermissaoAcesso(ativo *Ativo) UsuarioBuilder {
 	b.usuario.PermissaoAcesso = append(b.usuario.PermissaoAcesso, ativo)
 	return b
