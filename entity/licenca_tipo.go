@@ -1,8 +1,9 @@
 package entity
 
 type LicencaTipo struct {
-	Id   uint
-	Nome string
+	Id        uint
+	Nome      string
+	Descricao string
 }
 
 func NewLicencaTipo(id uint) *LicencaTipo {

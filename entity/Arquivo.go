@@ -12,16 +12,16 @@ type Arquivo struct {
 	Url    string
 }
 
-func NewArquivo(nome string, path string) *Arquivo {
-	return &Arquivo{
-		Nome: nome,
-		Path: path,
-	}
+func NewArquivo() *Arquivo {
+	return &Arquivo{}
 }
 
 func NewArquivoFromFilename(filename string) *Arquivo {
 	nomeDoArquivo := filepath.Base(filename)
 	caminho := filepath.Dir(filename)
 
-	return NewArquivo(nomeDoArquivo, caminho)
+	return &Arquivo{
+		Nome: nomeDoArquivo,
+		Path: caminho,
+	}
 }
