@@ -15,6 +15,11 @@ func (b *LicencaTipoBuilder) WithNome(nome string) *LicencaTipoBuilder {
 	return b
 }
 
+func (b *LicencaTipoBuilder) WithDetalhe(detalhe string) *LicencaTipoBuilder {
+	b.licencaTipo.Detalhe = detalhe
+	return b
+}
+
 func (b *LicencaTipoBuilder) Build() *LicencaTipo {
 	return b.licencaTipo
 }
