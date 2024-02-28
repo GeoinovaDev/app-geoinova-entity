@@ -14,6 +14,10 @@ func (p PermissaoAction) Equals(permissao *Permissao) bool {
 	return false
 }
 
+func (p PermissaoAction) ToString() string {
+	return string(p)
+}
+
 const (
 	PERMISSAO_VIEW_ALERTAS                = PermissaoAction("view_alertas")
 	PERMISSAO_INSERT_ALERTA_JUSTIFICATIVA = PermissaoAction("insert_alerta_justificativa")
