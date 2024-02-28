@@ -16,12 +16,12 @@ func (b *GrupoPermissaoBuilder) WithNome(nome string) *GrupoPermissaoBuilder {
 }
 
 func (b *GrupoPermissaoBuilder) AddPermissao(permissao *Permissao) *GrupoPermissaoBuilder {
-	b.grupo.Permissao = append(b.grupo.Permissao, permissao)
+	b.grupo.Permissoes = append(b.grupo.Permissoes, permissao)
 	return b
 }
 
 func (b *GrupoPermissaoBuilder) WithPermissao(permissao ...*Permissao) *GrupoPermissaoBuilder {
-	b.grupo.Permissao = append(b.grupo.Permissao, permissao...)
+	b.grupo.Permissoes = append(b.grupo.Permissoes, permissao...)
 	return b
 }
 
