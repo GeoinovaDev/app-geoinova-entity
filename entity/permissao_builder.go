@@ -20,7 +20,7 @@ func (b *PermissaoBuilder) WithCategoria(categoria *PermissaoCategoria) *Permiss
 	return b
 }
 
-func (b *PermissaoBuilder) WithAction(action string) *PermissaoBuilder {
+func (b *PermissaoBuilder) WithAction(action PermissaoAction) *PermissaoBuilder {
 	b.permissao.Action = action
 	return b
 }

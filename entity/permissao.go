@@ -1,9 +1,42 @@
 package entity
 
+type PermissaoAction string
+
+func (p PermissaoAction) Equals(permissao *Permissao) bool {
+	if permissao == nil {
+		return false
+	}
+
+	if permissao.Action == p {
+		return true
+	}
+
+	return false
+}
+
+const (
+	PERMISSAO_VIEW_ALERTAS                = PermissaoAction("view_alertas")
+	PERMISSAO_INSERT_ALERTA_JUSTIFICATIVA = PermissaoAction("insert_alerta_justificativa")
+	PERMISSAO_EDIT_ALERTA_JUSTIFICATIVA   = PermissaoAction("insert_edit_justificativa")
+	PERMISSAO_INSERT_CAMADA               = PermissaoAction("insert_camada")
+	PERMISSAO_EDIT_CAMADA                 = PermissaoAction("edit_camada")
+	PERMISSAO_DELETE_CAMADA               = PermissaoAction("delete_camada")
+	PERMISSAO_INSERT_LICENCA              = PermissaoAction("insert_licenca")
+	PERMISSAO_EDIT_LICENCA                = PermissaoAction("edit_licenca")
+	PERMISSAO_DELETE_LICENCA              = PermissaoAction("delete_licenca")
+	PERMISSAO_VIEW_LICENCA                = PermissaoAction("view_licenca")
+	PERMISSAO_INSERT_USUARIO              = PermissaoAction("insert_usuario")
+	PERMISSAO_EDIT_USUARIO                = PermissaoAction("edit_usuario")
+	PERMISSAO_DELETE_USUARIO              = PermissaoAction("delete_usuario")
+	PERMISSAO_VIEW_USUARIOS               = PermissaoAction("view_usuarios")
+	PERMISSAO_GRANT_PERMISSAO             = PermissaoAction("grant _permissao")
+	PERMISSAO_REVOKE_PERMISSAO            = PermissaoAction("revoke_permissao")
+)
+
 type Permissao struct {
 	Id        uint
 	Nome      string
-	Action    string
+	Action    PermissaoAction
 	Categoria *PermissaoCategoria
 	Leitura   bool
 	Escrita   bool
