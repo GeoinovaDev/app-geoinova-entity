@@ -69,6 +69,12 @@ func NewPermissao(id uint) *Permissao {
 	}
 }
 
+func NewPermissaoFromAction(action PermissaoAction) *Permissao {
+	return &Permissao{
+		Action: action,
+	}
+}
+
 func (p *Permissoes) Add(permissao *Permissao) *Permissoes {
 	*p = append(*p, permissao)
 	return p
