@@ -47,7 +47,7 @@ const (
 	PERMISSAO_DELETE_USUARIO = PermissaoAction("delete_usuario")
 	PERMISSAO_CHANGE_SENHA   = PermissaoAction("change_senha")
 
-	PERMISSAO_GRANT_PERMISSAO  = PermissaoAction("grant _permissao")
+	PERMISSAO_GRANT_PERMISSAO  = PermissaoAction("grant_permissao")
 	PERMISSAO_REVOKE_PERMISSAO = PermissaoAction("revoke_permissao")
 )
 
