@@ -23,6 +23,26 @@ func NewUsuarioDominio(id uint) *UsuarioDominio {
 	}
 }
 
+func (u UsuariosDominios) ExistRole(role string) bool {
+	for _, _dominio := range u {
+		if _dominio.Role == role {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (u UsuariosDominios) ExistDominioAndRole(dominio string, role string) bool {
+	for _, _dominio := range u {
+		if _dominio.Role == role && _dominio.Dominio == dominio {
+			return true
+		}
+	}
+
+	return false
+}
+
 func (u UsuariosDominios) ExistDominio(dominio string) bool {
 	for _, _dominio := range u {
 		if _dominio.Dominio == dominio {
