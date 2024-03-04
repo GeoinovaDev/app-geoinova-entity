@@ -5,6 +5,7 @@ const (
 	USUARIO_ROLE_USER      = "user"
 	USUARIO_ROLE_MODERATOR = "moderador"
 	USUARIO_ROLE_TESTER    = "tester"
+	USUARIO_ROLE_ROOT      = "root"
 )
 
 type UsuarioDominio struct {
