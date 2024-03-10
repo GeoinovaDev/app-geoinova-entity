@@ -20,6 +20,16 @@ func (b *FormularioBuilder) WithPropriedade(propriedades []*FormularioPropriedad
 	return b
 }
 
+func (b *FormularioBuilder) WithIsPadrao(isPadrao bool) *FormularioBuilder {
+	b.formulario.IsPadrao = isPadrao
+	return b
+}
+
+func (b *FormularioBuilder) WithCliente(cliente *Cliente) *FormularioBuilder {
+	b.formulario.Cliente = cliente
+	return b
+}
+
 func (b *FormularioBuilder) AddPropriedade(propriedade ...*FormularioPropriedade) *FormularioBuilder {
 	b.formulario.Propriedades = append(b.formulario.Propriedades, propriedade...)
 	return b
