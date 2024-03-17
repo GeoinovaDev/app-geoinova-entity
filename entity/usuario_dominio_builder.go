@@ -30,6 +30,16 @@ func (b *UsuarioDominioBuilder) WithUsuario(usuario *Usuario) *UsuarioDominioBui
 	return b
 }
 
+func (b *UsuarioDominioBuilder) WithAppVersion(appVersion string) *UsuarioDominioBuilder {
+	b.usuarioDominio.AppVersion = appVersion
+	return b
+}
+
+func (b *UsuarioDominioBuilder) WithApiVersion(apiVersion string) *UsuarioDominioBuilder {
+	b.usuarioDominio.ApiVersion = apiVersion
+	return b
+}
+
 func (b *UsuarioDominioBuilder) Build() *UsuarioDominio {
 	return b.usuarioDominio
 }

@@ -9,11 +9,13 @@ const (
 )
 
 type UsuarioDominio struct {
-	Id      uint
-	Dominio string
-	Role    string
-	Usuario *Usuario
-	Checked bool
+	Id         uint
+	Dominio    string
+	Role       string
+	Usuario    *Usuario
+	Checked    bool
+	AppVersion string
+	ApiVersion string
 }
 
 type UsuariosDominios []*UsuarioDominio
