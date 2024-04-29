@@ -12,6 +12,8 @@ type Deteccao struct {
 	Alerta              *Alerta
 	Cliente             *Cliente
 	Camadas             []*Camada
+	Bounds              *DeteccaoBounds
+	Previews            *DeteccaoPreviews
 }
 
 func NewDeteccao(id uint) *Deteccao {

@@ -13,6 +13,16 @@ func (b DeteccaoBuilder) WithWkt(wkt string) DeteccaoBuilder {
 	return b
 }
 
+func (b DeteccaoBuilder) WithBounds(bounds *DeteccaoBounds) DeteccaoBuilder {
+	b.deteccao.Bounds = bounds
+	return b
+}
+
+func (b DeteccaoBuilder) WithPreviews(previews *DeteccaoPreviews) DeteccaoBuilder {
+	b.deteccao.Previews = previews
+	return b
+}
+
 func (b DeteccaoBuilder) WithCliente(cliente *Cliente) DeteccaoBuilder {
 	b.deteccao.Cliente = cliente
 	return b
