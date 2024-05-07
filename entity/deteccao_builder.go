@@ -23,6 +23,11 @@ func (b DeteccaoBuilder) WithPreviews(previews *DeteccaoPreviews) DeteccaoBuilde
 	return b
 }
 
+func (b DeteccaoBuilder) WithCamadaBase(camada *Camada) DeteccaoBuilder {
+	b.deteccao.CamadaBase = camada
+	return b
+}
+
 func (b DeteccaoBuilder) WithCliente(cliente *Cliente) DeteccaoBuilder {
 	b.deteccao.Cliente = cliente
 	return b

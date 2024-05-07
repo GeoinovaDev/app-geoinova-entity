@@ -14,6 +14,7 @@ type Deteccao struct {
 	Camadas             []*Camada
 	Bounds              *DeteccaoBounds
 	Previews            *DeteccaoPreviews
+	CamadaBase          *Camada
 }
 
 func NewDeteccao(id uint) *Deteccao {
