@@ -18,6 +18,11 @@ func (b ClienteBuilder) WithStatus(status ClienteStatus) ClienteBuilder {
 	return b
 }
 
+func (b ClienteBuilder) WithModulos(modulos []*Modulo) ClienteBuilder {
+	b.cliente.Modulos = modulos
+	return b
+}
+
 func (b ClienteBuilder) WithDescricao(descricao string) ClienteBuilder {
 	b.cliente.Descricao = descricao
 	return b
