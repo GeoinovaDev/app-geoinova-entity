@@ -4,8 +4,8 @@ type ModuloBuilder struct {
 	modulo *Modulo
 }
 
-func NewModuloBuilder() *ModuloBuilder {
-	return &ModuloBuilder{NewModulo(0)}
+func NewModuloBuilder(id uint) *ModuloBuilder {
+	return &ModuloBuilder{NewModulo(id)}
 }
 
 func (b *ModuloBuilder) WithNome(nome string) *ModuloBuilder {
