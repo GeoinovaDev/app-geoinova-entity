@@ -4,6 +4,7 @@ type GrupoPermissao struct {
 	Id         uint
 	Nome       string
 	Permissoes []*Permissao
+	Cliente    *Cliente
 }
 
 func NewGrupoPermissao(id uint) *GrupoPermissao {

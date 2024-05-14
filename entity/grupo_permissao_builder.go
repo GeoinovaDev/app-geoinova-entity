@@ -15,6 +15,11 @@ func (b *GrupoPermissaoBuilder) WithNome(nome string) *GrupoPermissaoBuilder {
 	return b
 }
 
+func (b *GrupoPermissaoBuilder) WithCliente(cliente *Cliente) *GrupoPermissaoBuilder {
+	b.grupo.Cliente = cliente
+	return b
+}
+
 func (b *GrupoPermissaoBuilder) AddPermissao(permissao *Permissao) *GrupoPermissaoBuilder {
 	b.grupo.Permissoes = append(b.grupo.Permissoes, permissao)
 	return b
