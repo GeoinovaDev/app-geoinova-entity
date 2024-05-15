@@ -4,7 +4,7 @@ type PermissaoGrupoPermissao struct {
 	Id             uint
 	Permissao      *Permissao
 	GrupoPermissao *GrupoPermissao
-	Enabled        bool
+	Cliente        *Cliente
 }
 
 func NewPermissaoGrupoPermissao(id uint) *PermissaoGrupoPermissao {

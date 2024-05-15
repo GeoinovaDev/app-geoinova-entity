@@ -10,8 +10,8 @@ func NewPermissaoGrupoPermissaoBuilder(id uint) *PermissaoGrupoPermissaoBuilder 
 	}
 }
 
-func (b *PermissaoGrupoPermissaoBuilder) WithEnabled(enabled bool) *PermissaoGrupoPermissaoBuilder {
-	b.permissaoGrupoPermissao.Enabled = enabled
+func (b *PermissaoGrupoPermissaoBuilder) WithCliente(cliente *Cliente) *PermissaoGrupoPermissaoBuilder {
+	b.permissaoGrupoPermissao.Cliente = cliente
 	return b
 }
 
