@@ -11,6 +11,7 @@ type UsuarioSessionDecoder interface {
 }
 
 type UsuarioSession struct {
+	Provider        string
 	CreateAt        int64
 	ExpiredAt       int64
 	Version         string
@@ -18,8 +19,9 @@ type UsuarioSession struct {
 	ManterConectado bool
 }
 
-func NewUsuarioSession(version string, usuario *Usuario, manterConectado bool) *UsuarioSession {
+func NewUsuarioSession(provider string, version string, usuario *Usuario, manterConectado bool) *UsuarioSession {
 	u := &UsuarioSession{
+		Provider:        provider,
 		Usuario:         usuario,
 		Version:         version,
 		ManterConectado: manterConectado,
@@ -30,6 +32,11 @@ func NewUsuarioSession(version string, usuario *Usuario, manterConectado bool) *
 
 func NewUsuarioSessionFromDecoder(decoder UsuarioSessionDecoder) *UsuarioSession {
 	u := &UsuarioSession{}
+
+	provider, exist := decoder.GetClaimString("provider")
+	if exist {
+		u.Provider = provider
+	}
 
 	userId, exist := decoder.GetClaimFloat64("user_id")
 	if exist {
@@ -68,6 +75,9 @@ func (u *UsuarioSession) Claims() map[string]interface{} {
 	timeStart := time.Now().Unix()
 	claims := map[string]interface{}{}
 
+	claims["provider"] = u.Provider
+	claims["version"] = u.Version
+
 	claims["init_at"] = timeStart
 	claims["exp_at"] = timeStart + expireTime(u.ManterConectado)
 	claims["keep_con"] = u.ManterConectado
@@ -75,8 +85,6 @@ func (u *UsuarioSession) Claims() map[string]interface{} {
 	claims["user_id"] = u.Usuario.Id
 	claims["operador_id"] = u.Usuario.Id
 	claims["cliente_id"] = u.Usuario.Cliente.Id
-
-	claims["version"] = u.Version
 
 	return claims
 }
@@ -99,6 +107,10 @@ func (u *UsuarioSession) GetUserId() uint {
 
 func (u *UsuarioSession) GetVersion() string {
 	return u.Version
+}
+
+func (u *UsuarioSession) GetProvider() string {
+	return u.Provider
 }
 
 func (u *UsuarioSession) GetClienteId() uint {
