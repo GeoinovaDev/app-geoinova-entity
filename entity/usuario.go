@@ -11,7 +11,7 @@ type Usuario struct {
 	PermissaoAcesso []*Ativo
 	Papel           UsuarioPapel
 	GrupoPermissao  *GrupoPermissao
-	Telefone        Telefone
+	Telefone        *Telefone
 }
 
 func NewUsuario(id uint) *Usuario {
