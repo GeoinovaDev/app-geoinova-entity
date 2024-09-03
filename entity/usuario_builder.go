@@ -18,6 +18,11 @@ func (b UsuarioBuilder) WithPapel(papel UsuarioPapel) UsuarioBuilder {
 	return b
 }
 
+func (b UsuarioBuilder) WithTelefone(telefone Telefone) UsuarioBuilder {
+	b.usuario.Telefone = telefone
+	return b
+}
+
 func (b UsuarioBuilder) WithDescricao(descricao string) UsuarioBuilder {
 	b.usuario.Descricao = descricao
 	return b
