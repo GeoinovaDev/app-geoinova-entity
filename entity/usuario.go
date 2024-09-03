@@ -20,3 +20,21 @@ func NewUsuario(id uint) *Usuario {
 		PermissaoAcesso: []*Ativo{},
 	}
 }
+
+func (u *Usuario) SetTelefoneNumero(numero *string) *Usuario {
+	if numero == nil {
+		return u
+	}
+
+	u.Telefone = ParseTelefone(*numero)
+	return u
+}
+
+func (u *Usuario) GetTelefoneNumero() *string {
+	if u.Telefone == nil {
+		return nil
+	}
+
+	numero := u.Telefone.ToNumber()
+	return &numero
+}
