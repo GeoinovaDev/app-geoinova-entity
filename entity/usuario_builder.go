@@ -23,6 +23,11 @@ func (b UsuarioBuilder) WithTelefone(telefone *Telefone) UsuarioBuilder {
 	return b
 }
 
+func (b UsuarioBuilder) WithRecebeNotificacao(recebeNotificacao bool) UsuarioBuilder {
+	b.usuario.RecebeNotificacao = recebeNotificacao
+	return b
+}
+
 func (b UsuarioBuilder) WithDescricao(descricao string) UsuarioBuilder {
 	b.usuario.Descricao = descricao
 	return b

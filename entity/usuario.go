@@ -1,17 +1,18 @@
 package entity
 
 type Usuario struct {
-	Id              uint
-	Nome            string
-	Email           string
-	Senha           string
-	Descricao       string
-	Status          UsuarioStatus
-	Cliente         *Cliente
-	PermissaoAcesso []*Ativo
-	Papel           UsuarioPapel
-	GrupoPermissao  *GrupoPermissao
-	Telefone        *Telefone
+	Id                uint
+	Nome              string
+	Email             string
+	Senha             string
+	Descricao         string
+	Status            UsuarioStatus
+	Cliente           *Cliente
+	PermissaoAcesso   []*Ativo
+	Papel             UsuarioPapel
+	GrupoPermissao    *GrupoPermissao
+	Telefone          *Telefone
+	RecebeNotificacao bool
 }
 
 func NewUsuario(id uint) *Usuario {
