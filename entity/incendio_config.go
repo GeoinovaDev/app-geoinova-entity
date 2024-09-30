@@ -5,9 +5,9 @@ type IncendioConfig struct {
 	Cliente  *Cliente
 	Nome     string
 	Raio     float64
+	Contatos *IncendioContato
 	Camadas  []*Camada
 	Usuarios []*Usuario
-	Contatos []*IncendioContato
 }
 
 func NewIncendioConfig(id uint) *IncendioConfig {

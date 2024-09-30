@@ -30,8 +30,8 @@ func (b *IncendioConfigBuilder) WithCamada(camada ...*Camada) *IncendioConfigBui
 	return b
 }
 
-func (b *IncendioConfigBuilder) WithContato(contato ...*IncendioContato) *IncendioConfigBuilder {
-	b.config.Contatos = append(b.config.Contatos, contato...)
+func (b *IncendioConfigBuilder) WithContato(contatos *IncendioContato) *IncendioConfigBuilder {
+	b.config.Contatos = contatos
 	return b
 }
 

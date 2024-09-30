@@ -1,6 +1,10 @@
 package entity
 
 type IncendioContato struct {
-	Email    string
-	Telefone *Telefone
+	Emails    []string
+	Telefones []*Telefone
+}
+
+func NewIncendioContato() *IncendioContato {
+	return &IncendioContato{}
 }
