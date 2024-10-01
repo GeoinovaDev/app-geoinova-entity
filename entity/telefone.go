@@ -1,6 +1,9 @@
 package entity
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 type Telefone struct {
 	CodePais   string
@@ -18,6 +21,20 @@ func (t *Telefone) ToNumber() string {
 
 func (t *Telefone) ToGlobalNumber() string {
 	return t.CodePais + t.CodeRegiao + t.Numero
+}
+
+func (t *Telefone) ToLocalNumber() string {
+	number := t.ToNumber()
+
+	if len(number) == 10 {
+		return fmt.Sprintf("(%s) %s-%s", number[:2], number[2:6], number[6:])
+	}
+
+	if len(number) == 11 {
+		return fmt.Sprintf("(%s) %s-%s", number[:2], number[2:7], number[7:])
+	}
+
+	return number
 }
 
 func ParseTelefone(numero string) *Telefone {
